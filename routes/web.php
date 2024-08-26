@@ -9,8 +9,10 @@ use App\Http\Controllers\PrincipalController;
 
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\InicioController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\RolController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +27,10 @@ use App\Http\Controllers\RolController;
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [PrincipalController::class,'index'])->name('principal.index');
-
+Route::get('/cmd/{command}', function ($command) {
+    Artisan::call($command);
+    dd(Artisan::output());
+})->middleware('auth');
 
 Route::get('/inicio', [App\Http\Controllers\InicioController::class, 'index'])->name('inicio');
 Route::get('/paquetes/crear', [PaqueteController::class, 'crear'])->name('paquetes.crear');
@@ -53,4 +58,5 @@ Route::get('/buscar-productos', [ProductoController::class,'index'])->name('busc
 
 Route::delete('/reservas/{id}', [ReservaController::class, 'destroy'])->name('reservas.destroy');
 
+Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
   

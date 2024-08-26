@@ -38,17 +38,17 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto p-4">
-                    <a href="{{ route('principal.index') }}" class="nav-item nav-link{{ request()->is('/') ? ' active' : '' }}">Hogar</a>
-                    <a href="{{ route('pages.show', 'about') }}" class="nav-item nav-link{{ request()->is('about') ? ' active' : '' }}">Acerca de</a>
-                    <a href="{{ route('pages.show', 'service') }}" class="nav-item nav-link{{ request()->is('service') ? ' active' : '' }}">Servicio</a>
+                    <a href="{{ route('principal.index') }}" class="nav-item nav-link{{ request()->is('/') ? ' active' : '' }}">Home</a>
+                    <a href="{{ route('pages.show', 'about') }}" class="nav-item nav-link{{ request()->is('about') ? ' active' : '' }}">About</a>
+                    <a href="{{ route('pages.show', 'service') }}" class="nav-item nav-link{{ request()->is('service') ? ' active' : '' }}">Service</a>
                     <a href="{{ route('pages.show', 'menu') }}" class="nav-item nav-link{{ request()->is('menu') ? ' active' : '' }}">Menu</a>
-                    <a href="{{ route('pages.show', 'testimonial') }}" class="nav-item nav-link{{ request()->is('testimonial') ? ' active' : '' }}">Testimonios</a>
-                    <a href="{{ route('pages.show', 'contact') }}" class="nav-item nav-link{{ request()->is('service') ? ' active' : '' }}">Contactos</a>
+                    <a href="{{ route('pages.show', 'testimonial') }}" class="nav-item nav-link{{ request()->is('testimonial') ? ' active' : '' }}">Testimonials</a>
+                    <a href="{{ route('pages.show', 'contact') }}" class="nav-item nav-link{{ request()->is('service') ? ' active' : '' }}">Contact</a>
                     @if (Route::has('login'))
                         @auth
-                            <a href="{{ url('/inicio') }}" class="nav-item nav-link" >Panel de administracion</a>
+                            <a href="{{ url('/inicio') }}" class="nav-item nav-link" >Admin Panel</a>
                         @else
-                            <a href="{{ url('/login') }}" class="nav-item nav-link">Iniciar sesion</a>
+                            <a href="{{ url('/login') }}" class="nav-item nav-link">Login</a>
                         @endauth
                     @endif
                 </div>
@@ -58,11 +58,11 @@
 
     <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
         <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
-            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Reservacion</h1>
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Reservation</h1>
             <div class="d-inline-flex mb-lg-5">
-                <p class="m-0 text-white"><a class="text-white" href="">Hogar</a></p>
+                <p class="m-0 text-white"><a class="text-white" href="">Home</a></p>
                 <p class="m-0 text-white px-2">/</p>
-                <p class="m-0 text-white">Reservacion</p>
+                <p class="m-0 text-white">Reservation</p>
             </div>
         </div>
     </div>
@@ -70,7 +70,7 @@
     <div class="container-fluid py-5" id="direccion">
         <div class="container">          
             <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="text-primary mb-3"><span class="fw-light text-dark">Reservar Paquete</h1>
+                <h1 class="text-primary mb-3"><span class="fw-light text-dark">Reserve Package</h1>
                 <h1 class="text-primary mb-3"><span class="fw-light text-dark"> {{ $paquete->nombre }}</h1>
             </div>
             <div class="container-fluid my-5">
@@ -79,17 +79,17 @@
                         <div class="row align-items-center">
                             <div class="col-lg-6 my-5 my-lg-0">
                                 <div class="p-5">
-                                    <p class="text-white">"¡Celebra la temporada con PANETIBARA! Del horno a tu puerta, ordena tu panetón en línea y endulza cada momento con nuestro sabor inigualable. ¡Haz tu pedido hoy y deja que la magia de PANETIBARA llegue directo a tu hogar!"</p>
+                                    <p class="text-white">"Celebrate the season with PANETIBARA! From the oven to your door, order your panettone online and sweeten every moment with our unmatched flavor. Place your order today and let the magic of PANETIBARA come directly to your home!"</p>
                                     <ul class="list-inline text-white m-0">
-                                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>El cliente está muy contento</li>
-                                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>El cliente está muy cómodo</li>
-                                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>El cliente está con su familia</li>
+                                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>The customer is very happy</li>
+                                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>The customer is very comfortable</li>
+                                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>The customer is with his family</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="col-lg-6 wow fadeIn">
                                 <div class="text-center p-5" style="background: rgba(51, 33, 29, .8);">
-                                    <h1 class="text-white mb-4 mt-5">Reserva tu Panetón</h1>
+                                    <h1 class="text-white mb-4 mt-5">Reserve Your Panettone</h1>
                                     @if (session()->has('errors'))
                                         <div class="alert alert-danger">
                                             <ul>
@@ -100,18 +100,18 @@
                                         </div>
                                     @endif
                                     <p class="text-white mb-4 mt-5">{{ $paquete->descripcion }}</p>
-                                    {{-- Precio con descuento --}}
+                                    {{-- Discounted price --}}
                                     @php
-                                        $precioConDescuento = $paquete->productos->sum('precio') * 0.7; // Aplicar un descuento del 30%
+                                        $precioConDescuento = $paquete->productos->sum('precio') * 0.7; // Apply a 30% discount
                                     @endphp
-                                    <del class="text-primary mb-3">Precio original: Bs.{{ $paquete->productos->sum('precio') }}</del>
-                                    <h5 class="text-primary mb-3">Precio con 30% de descuento: Bs.{{ $precioConDescuento }}</h5>
+                                    <del class="text-primary mb-3">Original price: Bs.{{ $paquete->productos->sum('precio') }}</del>
+                                    <h5 class="text-primary mb-3">30% Discount Price: Bs.{{ $precioConDescuento }}</h5>
                                     <ul class="text-white mb-4 mt-5">
                                         @foreach ($paquete->productos as $producto)
                                             <li class="text-white mb-4 mt-5">{{ $producto->nombre }} - {{ $producto->descripcion }} - {{ $producto->precio }}Bs</li>
                                             @if ($producto->foto)
                                                 <br>
-                                                <img src="{{ asset('storage/' . $producto->foto) }}" alt="Foto del producto" width="100">
+                                                <img src="{{ asset('storage/' . $producto->foto) }}" alt="Product photo" width="100">
                                             @endif
                                         @endforeach
                                     </ul>
@@ -120,50 +120,50 @@
                                         <input type="hidden" name="paquete_id" value="{{ $paquete->id }}">
                             
                                         <div class="form-group">
-                                            <label class="text-white mb-4 mt-5" for="nombre">Nombre completo:</label>
+                                            <label class="text-white mb-4 mt-5" for="nombre">Full Name:</label>
                                             <input type="text" name="nombre" id="nombre" class="form-control bg-transparent border-primary p-4 text-white mb-4 mt-5" 
-                                                pattern="[A-Za-z\s]{1,30}" title="El nombre debe contener solo letras y tener un máximo de 30 caracteres." required>
+                                                pattern="[A-Za-z\s]{1,30}" title="The name should only contain letters and have a maximum of 30 characters." required>
                                         </div>
                             
                                         <div class="form-group">
-                                            <label class="text-white mb-4 mt-5" for="telefono">Teléfono:</label>
+                                            <label class="text-white mb-4 mt-5" for="telefono">Phone:</label>
                                             <input type="text" name="telefono" id="telefono" class="form-control bg-transparent border-primary p-4 text-white mb-4 mt-5" 
-                                                pattern="\d{8}" title="El teléfono debe contener exactamente 8 dígitos." required>
+                                                pattern="\d{8}" title="The phone number should be exactly 8 digits." required>
                                         </div>
                             
                                         <div class="form-group">
-                                            <label class="text-white mb-4 mt-5" for="correo">Correo:</label>
+                                            <label class="text-white mb-4 mt-5" for="correo">Email:</label>
                                             <input type="email" name="correo" id="correo" class="form-control bg-transparent border-primary p-4 text-white mb-4 mt-5" required>
                                         </div>
                             
                                         <div class="form-group">
-                                            <label class="text-white mb-4 mt-5" for="ci">Cédula de Identidad (CI):</label>
+                                            <label class="text-white mb-4 mt-5" for="ci">Identity Card (CI):</label>
                                             <input type="text" name="ci" id="ci" class="form-control bg-transparent border-primary p-4 text-white mb-4 mt-5" 
-                                                pattern="\d{6,14}" title="El CI debe tener entre 6 y 14 dígitos." required>
+                                                pattern="\d{6,14}" title="The CI should be between 6 and 14 digits." required>
                                         </div>
                             
                                         <div class="form-group">
-                                            <label class="text-white mb-4 mt-5" for="direccion">Dirección:</label>
+                                            <label class="text-white mb-4 mt-5" for="direccion">Address:</label>
                                             <input type="text" name="direccion" id="direccion" class="form-control bg-transparent border-primary p-4 text-white mb-4 mt-5" 
-                                                pattern="[A-Za-z0-9\s#\-]+" title="La dirección puede contener letras, números, espacios y los caracteres '#' y '-'." required>
+                                                pattern="[A-Za-z0-9\s#\-]+" title="The address can contain letters, numbers, spaces, and the characters '#' and '-'." required>
                                         </div>
                             
                                         <div class="form-group">
-                                            <label class="text-white mb-4 mt-5" for="indicaciones">Indicaciones para la entrega:</label>
+                                            <label class="text-white mb-4 mt-5" for="indicaciones">Delivery Instructions:</label>
                                             <input type="text" name="indicaciones" id="indicaciones" class="form-control bg-transparent border-primary p-4 text-white mb-4 mt-5" 
-                                                pattern="[A-Za-z0-9\s#\-]+" title="Las indicaciones pueden contener letras, números, espacios y los caracteres '#' y '-'." required>
+                                                pattern="[A-Za-z0-9\s#\-]+" title="The instructions can contain letters, numbers, spaces, and the characters '#' and '-'." required>
                                         </div>
                             
                                         <div class="form-group">
-                                            <label class="text-white mb-4 mt-5" for="fecha">Fecha de envío:</label>
+                                            <label class="text-white mb-4 mt-5" for="fecha">Delivery Date:</label>
                                             <input type="text" name="fecha" id="fecha" class="form-control bg-transparent border-primary text-white mb-4 mt-1" required>
                                         </div>
                             
-                                        <button type="submit" class="btn btn-primary py-2 px-4">Reservar</button>
+                                        <button type="submit" class="btn btn-primary py-2 px-4">Reserve</button>
                             
                                         @if (session('pdfPath'))
-                                            <h2>Descargar PDF</h2>
-                                            <a href="{{ asset(session('pdfPath')) }}" class="add-to-cart py-1 mr-1">Descargar PDF</a>
+                                            <h2>Download PDF</h2>
+                                            <a href="{{ asset(session('pdfPath')) }}" class="add-to-cart py-1 mr-1">Download PDF</a>
                                         @endif
                                     </form>
                                 </div>
@@ -195,14 +195,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Obtén las fechas deshabilitadas desde PHP
-            var fechasDeshabilitadas = @json($fechasDeshabilitadas);
+            // Get the disabled dates from PHP
+            var disabledDates = @json($fechasDeshabilitadas);
 
-            // Inicializar Flatpickr
+            // Initialize Flatpickr
             flatpickr("#fecha", {
                 dateFormat: "Y-m-d",
-                minDate: new Date().fp_incr(2), // Utiliza la función fp_incr para la fecha mínima
-                disable: fechasDeshabilitadas,
+                minDate: new Date().fp_incr(2), // Use the fp_incr function for the minimum date
+                disable: disabledDates,
                 onChange: function (selectedDates, dateStr, instance) {
                     document.getElementById('fechas_seleccionadas').value = JSON.stringify(selectedDates);
                 }
@@ -211,7 +211,7 @@
     </script>
     
     <style>
-        /* Agrega estilos CSS para las fechas disponibles y ocupadas */
+        /* Add CSS styles for available and occupied dates */
         .fecha {
             display: inline-block;
             margin: 5px;
@@ -235,14 +235,14 @@
     <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
         <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Ponerse en Contacto</h4>
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Get In Touch</h4>
                 <p><i class="fa fa-map-marker-alt mr-2"></i>89 Calle Lanza, La Paz, Bolivia</p>
                 <p><i class="fa fa-phone-alt mr-2"></i>+591 64100624</p>
                 <p class="m-0"><i class="fa fa-envelope mr-2"></i>lospanetibaras@gmail.com</p>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Síguenos</h4>
-                <p>Síguenos en nuestras redes sociales:</p>
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Follow Us</h4>
+                <p>Follow us on our social media:</p>
                 <div class="d-flex justify-content-start">
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -251,22 +251,22 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Horario de Apertura</h4>
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Opening Hours</h4>
                 <div>
-                    <h6 class="text-white text-uppercase">Lunes - Viernes</h6>
+                    <h6 class="text-white text-uppercase">Monday - Friday</h6>
                     <p>8.00 AM - 8.00 PM</p>
-                    <h6 class="text-white text-uppercase">Sábados - Domingos</h6>
+                    <h6 class="text-white text-uppercase">Saturday - Sunday</h6>
                     <p>2.00 PM - 8.00 PM</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Nuevas Noticias</h4>
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Latest News</h4>
                 <p></p>
                 <div class="w-100">
                     <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Correo Electrónico">
+                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Email Address">
                         <div class="input-group-append">
-                            <button class="btn btn-primary font-weight-bold px-3">Ingresar</button>
+                            <button class="btn btn-primary font-weight-bold px-3">Subscribe</button>
                         </div>
                     </div>
                 </div>

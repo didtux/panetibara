@@ -41,20 +41,17 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto p-4">
-                    <a href="{{ route('principal.index') }}" class="nav-item nav-link{{ request()->is('/') ? ' active' : '' }}">Hogar</a>
-                    <a href="{{ route('pages.show', 'about') }}" class="nav-item nav-link{{ request()->is('about') ? ' active' : '' }}">Acerca de</a>
-                    <a href="{{ route('pages.show', 'service') }}" class="nav-item nav-link{{ request()->is('service') ? ' active' : '' }}">Servicio</a>
+                    <a href="{{ route('principal.index') }}" class="nav-item nav-link{{ request()->is('/') ? ' active' : '' }}">Home</a>
+                    <a href="{{ route('pages.show', 'about') }}" class="nav-item nav-link{{ request()->is('about') ? ' active' : '' }}">About</a>
+                    <a href="{{ route('pages.show', 'service') }}" class="nav-item nav-link{{ request()->is('service') ? ' active' : '' }}">Service</a>
                     <a href="{{ route('pages.show', 'menu') }}" class="nav-item nav-link{{ request()->is('menu') ? ' active' : '' }}">Menu</a>
-                    <a href="{{ route('pages.show', 'testimonial') }}" class="nav-item nav-link{{ request()->is('testimonial') ? ' active' : '' }}">Testimonios</a>
-                    
-                
-                
-                    <a  href="{{ route('pages.show', 'contact') }}" class="nav-item nav-link{{ request()->is('service') ? ' active' : '' }}">Contactos</a>
+                    <a href="{{ route('pages.show', 'testimonial') }}" class="nav-item nav-link{{ request()->is('testimonial') ? ' active' : '' }}">Testimonials</a>
+                    <a href="{{ route('pages.show', 'contact') }}" class="nav-item nav-link{{ request()->is('service') ? ' active' : '' }}">Contact</a>
                     @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/inicio') }}" class="nav-item nav-link" >Panel de administracion</a>
+                        <a href="{{ url('/inicio') }}" class="nav-item nav-link" >Admin Panel</a>
                     @else
-                        <a href="{{ url('/login') }}" class="nav-item nav-link">Iniciar sesion</a>
+                        <a href="{{ url('/login') }}" class="nav-item nav-link">Login</a>
                     @endauth
                 @endif
                 </div>
@@ -69,11 +66,11 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
         <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
-            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Sobre Nosotros</h1>
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">About Us</h1>
             <div class="d-inline-flex mb-lg-5">
-                <p class="m-0 text-white"><a class="text-white" href="">Hogar</a></p>
+                <p class="m-0 text-white"><a class="text-white" href="">Home</a></p>
                 <p class="m-0 text-white px-2">/</p>
-                <p class="m-0 text-white">Sobre Nosotros</p>
+                <p class="m-0 text-white">About Us</p>
             </div>
         </div>
     </div>
@@ -81,18 +78,17 @@
 
 
     <!-- About Start -->
-    <!-- About Start -->
     <div class="container-fluid py-5">
         <div class="container">
             <div class="section-title">
-                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Sobre Nosotros</h4>
-                <h1 class="display-4">Servicio desde 2023</h1>
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h4>
+                <h1 class="display-4">Service since 2023</h1>
             </div>
             <div class="row">
                 <div class="col-lg-4 py-0 py-lg-5">
-                    <h1 class="mb-3">Nuestra Misión</h1>
-                    <h5 class="mb-3">Estamos comprometidos en brindar felicidad a la mesa de cada cliente durante esta temporada festiva a través de la exquisitez de nuestros panetones</h5>
-                    <a href="" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Inicio</a>
+                    <h1 class="mb-3">Our Mission</h1>
+                    <h5 class="mb-3">We are committed to bringing happiness to every customer's table during this festive season through the exquisiteness of our panettones</h5>
+                    <a href="" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2">Home</a>
                 </div>
                 <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
                     <div class="position-relative h-100">
@@ -100,9 +96,9 @@
                     </div>
                 </div>
                 <div class="col-lg-4 py-0 py-lg-5">
-                    <h1 class="mb-3">Nuestra Visión</h1>
-                    <p>Ser líderes en la venta de panetones de alta calidad, reconocidos a nivel nacional e internacional por nuestra excelencia y constante innovación en sabores. Queremos ser una marca que inspire momentos especiales y enriquezca las celebraciones navideñas</p>
-                    <a href="" class="btn btn-primary font-weight-bold py-2 px-4 mt-2">Inicio</a>
+                    <h1 class="mb-3">Our Vision</h1>
+                    <p>To be leaders in the sale of high-quality panettones, recognized nationally and internationally for our excellence and constant innovation in flavors. We aim to be a brand that inspires special moments and enriches Christmas celebrations</p>
+                    <a href="" class="btn btn-primary font-weight-bold py-2 px-4 mt-2">Home</a>
                 </div>
             </div>
         </div>
@@ -114,14 +110,14 @@
     <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
         <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Ponerse en Contacto</h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>89 Calle Lanza,La Paz ,Bolivia</p>
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Get in Touch</h4>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>89 Lanza Street, La Paz, Bolivia</p>
                 <p><i class="fa fa-phone-alt mr-2"></i>+591 64100624</p>
                 <p class="m-0"><i class="fa fa-envelope mr-2"></i>lospanetibaras@gmail.com</p>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Siganos</h4>
-                <p>Siganos en nuestras redes sociales como:</p>
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Follow Us</h4>
+                <p>Follow us on our social networks:</p>
                 <div class="d-flex justify-content-start">
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -130,22 +126,22 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Horario Apertura</h4>
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Opening Hours</h4>
                 <div>
-                    <h6 class="text-white text-uppercase">Lunes - Viernes</h6>
+                    <h6 class="text-white text-uppercase">Monday - Friday</h6>
                     <p>8.00 AM - 8.00 PM</p>
-                    <h6 class="text-white text-uppercase">Sabados - Domingos</h6>
+                    <h6 class="text-white text-uppercase">Saturday - Sunday</h6>
                     <p>2.00 PM - 8.00 PM</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Nuevas Noticias</h4>
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Latest News</h4>
                 <p></p>
                 <div class="w-100">
                     <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Correo Electronico">
+                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Email Address">
                         <div class="input-group-append">
-                            <button class="btn btn-primary font-weight-bold px-3">Ingresar</button>
+                            <button class="btn btn-primary font-weight-bold px-3">Subscribe</button>
                         </div>
                     </div>
                 </div>
@@ -158,25 +154,57 @@
         </div>
     </div>
     <!-- Footer End -->
+    <div style="position: fixed; top: 50%; right: 0; transform: translateY(-50%); z-index: 1000;">
+        <button onclick="translatePage('es')" class="btn btn-light mb-2" style="display: flex; align-items: center;">
+            <img src="{{ asset('img/spa.png') }}" alt="Spanish" style="width: 20px; height: 20px; margin-right: 5px;">
+            Spanish
+        </button>
+        <button onclick="translatePage('en')" class="btn btn-light" style="display: flex; align-items: center;">
+            <img src="{{ asset('img/us.png') }}" alt="English" style="width: 20px; height: 20px; margin-right: 5px;">
+            English
+        </button>
+    </div>
+    <div id="google_translate_element"></div>
 
-
-    <!-- Back to Top -->
     <script>
-        window.watsonAssistantChatOptions = {
-          integrationID: "9a9b17c6-8732-4c4d-89a7-821abe6a235f", // The ID of this integration.
-          region: "us-east", // The region your integration is hosted in.
-          serviceInstanceID: "23fb125e-bdc7-474f-ac9b-5e12851faec1", // The ID of your service instance.
-          onLoad: async (instance) => { await instance.render(); }
+     function translatePage(lang) {
+    if (lang === 'en') {
+        // Recarga la página para mostrar el contenido original en inglés
+        location.reload();
+    } else {
+        var googleTranslateElement = document.createElement('script');
+        googleTranslateElement.type = 'text/javascript';
+        googleTranslateElement.async = true;
+        googleTranslateElement.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.head.appendChild(googleTranslateElement);
+
+        window.googleTranslateElementInit = function() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: lang,
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
         };
-        setTimeout(function(){
-          const t=document.createElement('script');
-          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
-          document.head.appendChild(t);
-        });
-      </script>
+    }
+}
+
+    </script>    
+   <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "9a9b17c6-8732-4c4d-89a7-821abe6a235f", // The ID of this integration.
+      region: "us-east", // The region your integration is hosted in.
+      serviceInstanceID: "23fb125e-bdc7-474f-ac9b-5e12851faec1", // The ID of your service instance.
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>

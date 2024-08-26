@@ -55,7 +55,10 @@
 <script src="{{ asset('assets/js/iziToast.min.js') }}"></script>
 <script src="{{ asset('assets/js/select2.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.nicescroll.js') }}"></script>
-
+<div class="language-selector">
+    <a href="{{ route('lang.switch', 'en') }}">English</a>
+    <a href="{{ route('lang.switch', 'es') }}">Español</a>
+</div>
 <!-- Template JS File -->
 <script src="{{ asset('web/js/stisla.js') }}"></script>
 <script src="{{ asset('web/js/scripts.js') }}"></script>

@@ -33,7 +33,6 @@
             <a href="index.html" class="navbar-brand px-lg-4 m-0">
                 <h1 class="m-0 display-4 text-uppercase text-white">
                     <img src="img/logo.png" alt="Logo" width="90" height="80" class="d-inline-block align-text-top">
-                    
                 </h1>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -41,20 +40,17 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto p-4">
-                    <a href="{{ route('principal.index') }}" class="nav-item nav-link{{ request()->is('/') ? ' active' : '' }}">Hogar</a>
-                    <a href="{{ route('pages.show', 'about') }}" class="nav-item nav-link{{ request()->is('about') ? ' active' : '' }}">Acerca de</a>
-                    <a href="{{ route('pages.show', 'service') }}" class="nav-item nav-link{{ request()->is('service') ? ' active' : '' }}">Servicio</a>
+                    <a href="{{ route('principal.index') }}" class="nav-item nav-link{{ request()->is('/') ? ' active' : '' }}">Home</a>
+                    <a href="{{ route('pages.show', 'about') }}" class="nav-item nav-link{{ request()->is('about') ? ' active' : '' }}">About</a>
+                    <a href="{{ route('pages.show', 'service') }}" class="nav-item nav-link{{ request()->is('service') ? ' active' : '' }}">Service</a>
                     <a href="{{ route('pages.show', 'menu') }}" class="nav-item nav-link{{ request()->is('menu') ? ' active' : '' }}">Menu</a>
-                    <a href="{{ route('pages.show', 'testimonial') }}" class="nav-item nav-link{{ request()->is('testimonial') ? ' active' : '' }}">Testimonios</a>
-                    
-                
-                
-                    <a  href="{{ route('pages.show', 'contact') }}" class="nav-item nav-link{{ request()->is('service') ? ' active' : '' }}">Contactos</a>
+                    <a href="{{ route('pages.show', 'testimonial') }}" class="nav-item nav-link{{ request()->is('testimonial') ? ' active' : '' }}">Testimonials</a>
+                    <a href="{{ route('pages.show', 'contact') }}" class="nav-item nav-link{{ request()->is('service') ? ' active' : '' }}">Contact</a>
                     @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/inicio') }}" class="nav-item nav-link" >Panel de administracion</a>
+                        <a href="{{ url('/inicio') }}" class="nav-item nav-link">Admin Panel</a>
                     @else
-                        <a href="{{ url('/login') }}" class="nav-item nav-link">Iniciar sesion</a>
+                        <a href="{{ url('/login') }}" class="nav-item nav-link">Login</a>
                     @endauth
                 @endif
                 </div>
@@ -69,83 +65,82 @@
     <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
         <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
-            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Testimonios</h1>
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Testimonials</h1>
             <div class="d-inline-flex mb-lg-5">
-                <p class="m-0 text-white"><a class="text-white" href="">Hogar</a></p>
+                <p class="m-0 text-white"><a class="text-white" href="">Home</a></p>
                 <p class="m-0 text-white px-2">/</p>
-                <p class="m-0 text-white">Testimonios</p>
+                <p class="m-0 text-white">Testimonials</p>
             </div>
         </div>
     </div>
     <!-- Page Header End -->
 
 
-        <!-- Testimonial Start -->
-        <div class="container-fluid py-5">
-            <div class="container">
-                <div class="section-title">
-                    <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Testimonios</h4>
-                    <h1 class="display-4">Nuestros Clientes Dicen</h1>
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Testimonials</h4>
+                <h1 class="display-4">What Our Clients Say</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid" src="img/testimonial-1.jpg" alt="">
+                        <div class="ml-3">
+                            <h4>Marcela Gómez</h4>
+                            <i>Software Engineer</i>
+                        </div>
+                    </div>
+                    <p class="m-0">"The service I received was exceptional. Customer service and product quality exceeded my expectations."</p>
                 </div>
-                <div class="owl-carousel testimonial-carousel">
-                    <div class="testimonial-item">
-                        <div class="d-flex align-items-center mb-3">
-                            <img class="img-fluid" src="img/testimonial-1.jpg" alt="">
-                            <div class="ml-3">
-                                <h4>Marcela Gómez</h4>
-                                <i>Ingeniera de Software</i>
-                            </div>
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid" src="img/testimonial-2.jpg" alt="">
+                        <div class="ml-3">
+                            <h4>José Alvarez</h4>
+                            <i>Graphic Designer</i>
                         </div>
-                        <p class="m-0">"El servicio que recibí fue excepcional. La atención al cliente y la calidad del producto superaron mis expectativas."</p>
                     </div>
-                    <div class="testimonial-item">
-                        <div class="d-flex align-items-center mb-3">
-                            <img class="img-fluid" src="img/testimonial-2.jpg" alt="">
-                            <div class="ml-3">
-                                <h4>José Alvarez</h4>
-                                <i>Diseñador Gráfico</i>
-                            </div>
+                    <p class="m-0">"This product has changed the way I view my daily work. It's simply amazing."</p>
+                </div>
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid" src="img/testimonial-3.jpg" alt="">
+                        <div class="ml-3">
+                            <h4>Laura Pérez</h4>
+                            <i>Nutritionist</i>
                         </div>
-                        <p class="m-0">"Este producto ha cambiado la manera en que veo mi trabajo diario. Es simplemente impresionante."</p>
                     </div>
-                    <div class="testimonial-item">
-                        <div class="d-flex align-items-center mb-3">
-                            <img class="img-fluid" src="img/testimonial-3.jpg" alt="">
-                            <div class="ml-3">
-                                <h4>Laura Pérez</h4>
-                                <i>Nutricionista</i>
-                            </div>
+                    <p class="m-0">"I am delighted with the results. My clients are more than satisfied, and so am I."</p>
+                </div>
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center mb-3">
+                        <img class="img-fluid" src="img/testimonial-4.jpg" alt="">
+                        <div class="ml-3">
+                            <h4>Andrés Molina</h4>
+                            <i>Business Consultant</i>
                         </div>
-                        <p class="m-0">"Estoy encantada con los resultados. Mis clientes están más que satisfechos, y yo también."</p>
                     </div>
-                    <div class="testimonial-item">
-                        <div class="d-flex align-items-center mb-3">
-                            <img class="img-fluid" src="img/testimonial-4.jpg" alt="">
-                            <div class="ml-3">
-                                <h4>Andrés Molina</h4>
-                                <i>Consultor de Negocios</i>
-                            </div>
-                        </div>
-                        <p class="m-0">"La solución perfecta para mi negocio. Me ha permitido mejorar mi eficiencia y productividad."</p>
-                    </div>
+                    <p class="m-0">"The perfect solution for my business. It has allowed me to improve my efficiency and productivity."</p>
                 </div>
             </div>
         </div>
-        
-        <!-- Testimonial End -->
+    </div>
+    <!-- Testimonial End -->
 
     <!-- Footer Start -->
     <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
         <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Ponerse en Contacto</h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>89 Calle Lanza,La Paz ,Bolivia</p>
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Get in Touch</h4>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>89 Lanza Street, La Paz, Bolivia</p>
                 <p><i class="fa fa-phone-alt mr-2"></i>+591 64100624</p>
                 <p class="m-0"><i class="fa fa-envelope mr-2"></i>lospanetibaras@gmail.com</p>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Siganos</h4>
-                <p>Siganos en nuestras redes sociales como:</p>
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Follow Us</h4>
+                <p>Follow us on our social networks:</p>
                 <div class="d-flex justify-content-start">
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -154,22 +149,22 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Horario Apertura</h4>
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Opening Hours</h4>
                 <div>
-                    <h6 class="text-white text-uppercase">Lunes - Viernes</h6>
+                    <h6 class="text-white text-uppercase">Monday - Friday</h6>
                     <p>8.00 AM - 8.00 PM</p>
-                    <h6 class="text-white text-uppercase">Sabados - Domingos</h6>
+                    <h6 class="text-white text-uppercase">Saturday - Sunday</h6>
                     <p>2.00 PM - 8.00 PM</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Nuevas Noticias</h4>
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Latest News</h4>
                 <p></p>
                 <div class="w-100">
                     <div class="input-group">
-                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Correo Electronico">
+                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Email Address">
                         <div class="input-group-append">
-                            <button class="btn btn-primary font-weight-bold px-3">Ingresar</button>
+                            <button class="btn btn-primary font-weight-bold px-3">Subscribe</button>
                         </div>
                     </div>
                 </div>
@@ -177,13 +172,46 @@
         </div>
         <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
             <p class="mb-2 text-white">Copyright &copy; <a class="font-weight-bold" href="#">Panetibara</a>. All Rights Reserved.</a></p>
-            
-
         </div>
     </div>
     <!-- Footer End -->
 
+    <!-- Footer End -->
+    <div style="position: fixed; top: 50%; right: 0; transform: translateY(-50%); z-index: 1000;">
+        <button onclick="translatePage('es')" class="btn btn-light mb-2" style="display: flex; align-items: center;">
+            <img src="{{ asset('img/spa.png') }}" alt="Spanish" style="width: 20px; height: 20px; margin-right: 5px;">
+            Spanish
+        </button>
+        <button onclick="translatePage('en')" class="btn btn-light" style="display: flex; align-items: center;">
+            <img src="{{ asset('img/us.png') }}" alt="English" style="width: 20px; height: 20px; margin-right: 5px;">
+            English
+        </button>
+    </div>
+    <div id="google_translate_element"></div>
 
+    <script>
+     function translatePage(lang) {
+    if (lang === 'en') {
+        // Recarga la página para mostrar el contenido original en inglés
+        location.reload();
+    } else {
+        var googleTranslateElement = document.createElement('script');
+        googleTranslateElement.type = 'text/javascript';
+        googleTranslateElement.async = true;
+        googleTranslateElement.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        document.head.appendChild(googleTranslateElement);
+
+        window.googleTranslateElementInit = function() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: lang,
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        };
+    }
+}
+
+    </script>    
     <script>
         window.watsonAssistantChatOptions = {
           integrationID: "9a9b17c6-8732-4c4d-89a7-821abe6a235f", // The ID of this integration.
